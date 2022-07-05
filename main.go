@@ -58,6 +58,10 @@ func main() {
 			}
 		}
 	}
+	if len(currRow) > 0 {
+		row := strings.Join(currRow, ",") + "\n"
+		contents = append(contents, []byte(row)...)
+	}
 
 	if err := os.Remove(outputFile); err != nil {
 		log.Println(err.Error())
